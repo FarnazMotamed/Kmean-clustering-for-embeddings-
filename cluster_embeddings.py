@@ -29,7 +29,8 @@ X = lsa.fit_transform(X)
 
 #apply kmeans with 20 clusters
 kmeans = KMeans(n_clusters=20, random_state=0, max_iter=100).fit(X)
-kmeans.fit_predict(X)
 kmeans.fit_transform(X)
+
+#kmeans.fit_predict(X)
 
 print("done in %fs" % (time() - t0))
