@@ -21,8 +21,9 @@ X = np.array(y)
 #to make the vectors normalized, which makes KMeans behave as
 # spherical k-means for better results. Since LSA/SVD results are
 # not normalized, we have to redo the normalization.
-svd = TruncatedSVD(n_components=5, n_iter=7, random_state=42)
-svd.fit(X)
+
+#svd = TruncatedSVD(n_components=5, n_iter=7, random_state=42)
+#svd.fit(X)
 normalizer = Normalizer(copy=False)
 lsa = make_pipeline(svd, normalizer)
 X = lsa.fit_transform(X)
